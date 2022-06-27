@@ -5,7 +5,7 @@ module.exports = {
 	bail: 1,
 	clearMocks: true,
 	collectCoverage: true,
-	collectCoverageFrom: ['src/**/*.js(x)'],
+	collectCoverageFrom: ['src/components/**/*.js(x)'],
 	coverageReporters: ['lcov', 'text'],
 	modulePaths: ['<rootDir>/src/', '<rootDir>/.jest']
 }
