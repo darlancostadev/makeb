@@ -4,27 +4,32 @@ import React from 'react'
 function StatusReceived({ name }) {
 	let bg
 	switch (name) {
+		case 'Preparando pedido':
+			bg = 'bg-sky-300'
+			break
 		case 'Pagamento aprovado':
-			bg = 'green-100'
+			bg = 'bg-green-300'
 			break
 		case 'Aguardando pagamento':
-			bg = 'gray-100'
+			bg = 'bg-gray-300'
 			break
 		default:
-			bg = 'gray-100'
+			bg = 'bg-gray-300'
 	}
 	return (
-		<span
-			className={`px-3 inline-flex
+		<>
+			<span
+				className={`px-3 inline-flex
             text-xs
             leading-7
             font-semibold
             rounded-full
-            bg-${bg}
-            text-green-800`}
-		>
-			{name}
-		</span>
+            ${bg}
+            text-inherit`}
+			>
+				{name}
+			</span>
+		</>
 	)
 }
 StatusReceived.propTypes = {

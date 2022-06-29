@@ -3,13 +3,19 @@ import React, { useEffect, useState } from 'react'
 import Base from '../components/Base'
 import TotalStatus from '../components/TotalStatus'
 import WishList from '../components/WishList'
-import wishList from '../../mocks/wishList.json'
+import removeDuplicateObjectFromArray from '../../utils/removeDuplicateObjectFromArray'
+import { getAllOrders } from '../clients/multib-api'
 
 export default function Home({ wishList }) {
 	useEffect(() => {
-		setWishListAll(wishList)
+		const listRemoveDuplicateOrderId = removeDuplicateObjectFromArray(
+			wishList,
+			'orderId'
+		)
+		setWishListAll(listRemoveDuplicateOrderId)
 	}, [])
 	const [wishListAll, setWishListAll] = useState([])
+
 	return (
 		<Base>
 			<main className="bg-gray-100 h-screen">
@@ -29,7 +35,7 @@ export default function Home({ wishList }) {
 								</thead>
 								<tbody className="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-gray-700 dark:text-gray-400">
 									{wishListAll.map((item, i) => (
-										<WishList key={i} wishList={item} />
+										<WishList key={i} {...item} />
 									))}
 								</tbody>
 							</table>
@@ -41,6 +47,7 @@ export default function Home({ wishList }) {
 	)
 }
 export async function getServerSideProps() {
+	const wishList = await getAllOrders()
 	return {
 		props: {
 			wishList
