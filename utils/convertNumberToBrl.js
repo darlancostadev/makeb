@@ -1,5 +1,5 @@
-export default function valueFormatted(value) {
-	const result = value.toLocaleString('pt-br', {
+export default function convertNumberToBrl(value) {
+	const result = value?.toLocaleString('pt-br', {
 		style: 'currency',
 		currency: 'BRL'
 	})

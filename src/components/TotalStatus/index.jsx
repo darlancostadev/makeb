@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import convertNumberToBrl from '../../../utils/convertNumberToBrl'
+import removeDuplicateObjectFromArray from '../../../utils/removeDuplicateObjectFromArray'
 
 function TotalStatus({ wishList }) {
 	const sumAllValues = wishList
@@ -41,7 +43,7 @@ function TotalStatus({ wishList }) {
 							Total a receber
 						</p>
 						<p className="text-lg font-semibold text-gray-700 dark:text-gray-200">
-							{sumAllValues}
+							{convertNumberToBrl(sumAllValues)}
 						</p>
 					</div>
 				</div>

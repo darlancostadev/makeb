@@ -1,6 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const config = require('config')
 
-module.exports = nextConfig
+module.exports = {
+	serverRuntimeConfig: {
+		MULTIB_URL: config.get('MULTIB_URL')
+	},
+	publicRuntimeConfig: {},
+	api: {
+		externalResolver: true
+	}
+}
