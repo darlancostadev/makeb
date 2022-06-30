@@ -38,6 +38,12 @@ Inicie o servidor
   npm run start
 ```
 
+Rodando os testes
+
+```bash
+  npm run test
+```
+
 ### OBS: Esse projeto depende da api que pode ser encontrada no link abaixo:
 
 https://github.com/darlancostadev/api-multib.git
