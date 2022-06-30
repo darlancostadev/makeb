@@ -1,0 +1,21 @@
+[{
+    "_id": "62bc5d889d38c0243be07a2a",
+    "orderId": "123abc",
+    "value": 100,
+    "createdAt": "2022-06-29T14:11:20.436Z",
+    "status": [
+      {
+        "name": "Preparando pedido",
+        "createdAt": "2022-06-29T14:11:20.436Z"
+      },
+      {
+        "name": "Pagamento aprovado",
+        "createdAt": "2022-06-29T14:11:05.732Z"
+      },
+      {
+        "name": "Aguardando pagamento",
+        "createdAt": "2022-06-29T14:10:49.581Z"
+      }
+    ]
+  }
+]
