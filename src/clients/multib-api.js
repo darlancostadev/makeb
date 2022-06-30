@@ -17,3 +17,7 @@ export const getOrderByOrderId = async (orderId) => {
 	const { data: policies } = await instance.get(`/status/${orderId}`)
 	return policies
 }
+export const createOrder = async (order) => {
+	const { data: policies } = await instance.post(`/status/`, order)
+	return policies
+}
